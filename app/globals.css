@@ -1,0 +1,221 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@custom-variant dark (&:is(.dark *));
+
+@layer base {
+  :root {
+    /* Updated color tokens to match futuristic AI chatbot design brief */
+    --background: oklch(0.98 0.005 240); /* Light Gray #f9fafb */
+    --foreground: oklch(0.35 0.01 240); /* Dark Gray #4b5563 */
+    --card: oklch(1 0 0 / 0.8); /* Semi-transparent white for holographic effect */
+    --card-foreground: oklch(0.35 0.01 240); /* Dark Gray for card text */
+    --popover: oklch(1 0 0 / 0.9); /* Light popover background */
+    --popover-foreground: oklch(0.35 0.01 240); /* Dark Gray for popover text */
+    --primary: oklch(0.55 0.15 200); /* Cyan #0891b2 */
+    --primary-foreground: oklch(1 0 0); /* White text on primary */
+    --secondary: oklch(0.65 0.15 45); /* Amber #d97706 */
+    --secondary-foreground: oklch(1 0 0); /* White text on secondary */
+    --muted: oklch(0.98 0.005 240); /* Light Gray for muted */
+    --muted-foreground: oklch(0.35 0.01 240); /* Dark Gray for muted text */
+    --accent: oklch(0.65 0.15 45); /* Amber accent */
+    --accent-foreground: oklch(1 0 0); /* White text on accents */
+    --destructive: oklch(0.55 0.2 25); /* Red for destructive actions */
+    --destructive-foreground: oklch(1 0 0); /* White text on destructive */
+    --border: oklch(0.92 0.005 240); /* Light border #e5e7eb */
+    --input: oklch(1 0 0); /* White for input fields */
+    --ring: oklch(0.55 0.15 200 / 0.5); /* Light cyan for focus rings */
+    --chart-1: oklch(0.55 0.15 200); /* Primary chart color */
+    --chart-2: oklch(0.65 0.15 45); /* Secondary chart color */
+    --chart-3: oklch(0.35 0.01 240); /* Tertiary chart color */
+    --chart-4: oklch(0.98 0.005 240); /* Muted chart color */
+    --chart-5: oklch(0.55 0.2 25); /* Destructive chart color */
+    --radius: 0.5rem; /* Rounded corners */
+    --sidebar: oklch(1 0 0 / 0.9); /* Sidebar background */
+    --sidebar-foreground: oklch(0.35 0.01 240); /* Sidebar text */
+    --sidebar-primary: oklch(0.55 0.15 200); /* Primary sidebar accent */
+    --sidebar-primary-foreground: oklch(1 0 0); /* White text for primary sidebar */
+    --sidebar-accent: oklch(0.65 0.15 45); /* Sidebar accent color */
+    --sidebar-accent-foreground: oklch(1 0 0); /* White text for sidebar accents */
+    --sidebar-border: oklch(0.92 0.005 240); /* Light border for sidebar */
+    --sidebar-ring: oklch(0.55 0.15 200 / 0.5); /* Light cyan for sidebar focus */
+    --holographic-glow: 0 0 20px oklch(0.55 0.15 200 / 0.3);
+    --holographic-border: 1px solid oklch(0.55 0.15 200 / 0.2);
+    --particle-color: oklch(0.55 0.15 200 / 0.6);
+    --gradient-start: oklch(0.55 0.15 200 / 0.1);
+    --gradient-end: oklch(0.65 0.15 45 / 0.1);
+    --font-open-sans: "Open Sans", sans-serif;
+    --font-work-sans: "Work Sans", sans-serif;
+  }
+
+  .dark {
+    /* Updated dark mode tokens to maintain futuristic theme */
+    --background: oklch(0.08 0.01 240); /* Dark background */
+    --foreground: oklch(0.95 0.005 240); /* Light text */
+    --card: oklch(0.12 0.01 240 / 0.8); /* Semi-transparent dark card */
+    --card-foreground: oklch(0.95 0.005 240); /* Light card text */
+    --popover: oklch(0.12 0.01 240 / 0.9); /* Dark popover */
+    --popover-foreground: oklch(0.95 0.005 240); /* Light popover text */
+    --primary: oklch(0.65 0.18 200); /* Brighter cyan for dark mode */
+    --primary-foreground: oklch(0.08 0.01 240); /* Dark text on primary */
+    --secondary: oklch(0.75 0.18 45); /* Brighter amber for dark mode */
+    --secondary-foreground: oklch(0.08 0.01 240); /* Dark text on secondary */
+    --muted: oklch(0.15 0.01 240); /* Dark muted */
+    --muted-foreground: oklch(0.7 0.005 240); /* Light muted text */
+    --accent: oklch(0.75 0.18 45); /* Bright amber accent */
+    --accent-foreground: oklch(0.08 0.01 240); /* Dark text on accents */
+    --destructive: oklch(0.65 0.22 25); /* Bright red for dark mode */
+    --destructive-foreground: oklch(0.95 0.005 240); /* Light text on destructive */
+    --border: oklch(0.2 0.01 240); /* Dark border */
+    --input: oklch(0.12 0.01 240); /* Dark input fields */
+    --ring: oklch(0.65 0.18 200 / 0.5); /* Bright cyan focus rings */
+    --chart-1: oklch(0.65 0.18 200); /* Bright primary chart */
+    --chart-2: oklch(0.75 0.18 45); /* Bright secondary chart */
+    --chart-3: oklch(0.7 0.005 240); /* Light tertiary chart */
+    --chart-4: oklch(0.15 0.01 240); /* Dark muted chart */
+    --chart-5: oklch(0.65 0.22 25); /* Bright destructive chart */
+    --sidebar: oklch(0.12 0.01 240 / 0.9); /* Dark sidebar */
+    --sidebar-foreground: oklch(0.95 0.005 240); /* Light sidebar text */
+    --sidebar-primary: oklch(0.65 0.18 200); /* Bright sidebar primary */
+    --sidebar-primary-foreground: oklch(0.08 0.01 240); /* Dark text on sidebar primary */
+    --sidebar-accent: oklch(0.75 0.18 45); /* Bright sidebar accent */
+    --sidebar-accent-foreground: oklch(0.08 0.01 240); /* Dark text on sidebar accent */
+    --sidebar-border: oklch(0.2 0.01 240); /* Dark sidebar border */
+    --sidebar-ring: oklch(0.65 0.18 200 / 0.5); /* Bright cyan sidebar focus */
+    --holographic-glow: 0 0 25px oklch(0.65 0.18 200 / 0.4);
+    --holographic-border: 1px solid oklch(0.65 0.18 200 / 0.3);
+    --particle-color: oklch(0.65 0.18 200 / 0.7);
+    --gradient-start: oklch(0.65 0.18 200 / 0.15);
+    --gradient-end: oklch(0.75 0.18 45 / 0.15);
+  }
+}
+
+/* Added custom animations and holographic effects */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: var(--holographic-glow);
+  }
+  50% {
+    box-shadow: 0 0 30px oklch(0.55 0.15 200 / 0.5);
+  }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes particle-float {
+  0% {
+    transform: translateY(100vh) translateX(0px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) translateX(100px);
+    opacity: 0;
+  }
+}
+
+@keyframes holographic-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-gradient-shift {
+  animation: gradient-shift 8s ease infinite;
+  background-size: 200% 200%;
+}
+
+.animate-particle-float {
+  animation: particle-float 15s linear infinite;
+}
+
+.holographic-card {
+  background: var(--card);
+  border: var(--holographic-border);
+  box-shadow: var(--holographic-glow);
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+.holographic-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 30%, oklch(0.55 0.15 200 / 0.1) 50%, transparent 70%);
+  background-size: 200% 200%;
+  animation: holographic-shimmer 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.gradient-background {
+  background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end), var(--gradient-start));
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: var(--particle-color);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+html {
+  font-family: var(--font-open-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+.font-heading {
+  font-family: var(--font-work-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+* {
+  border-color: var(--border);
+  outline-color: var(--ring);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
