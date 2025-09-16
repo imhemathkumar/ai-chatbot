@@ -1,6 +1,9 @@
-setuptools>=65.5.0
-wheel
-build
+# Build system dependencies
+setuptools>=69.0.0
+wheel>=0.41.0
+build>=1.0.0
+
+# Application dependencies
 Flask==2.3.3
 Flask-CORS==4.0.0
 kagglehub==0.2.5
